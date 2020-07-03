@@ -3,41 +3,87 @@
     margin: 0;
     box-sizing: border-box;
 }
-main{
-    background-color: aquamarine;
+body{
     width: 100vw;
-    min-height: 100vh;
+}
+header{
+    height: 40vh;
     display: flex;
+    overflow: hidden;
+    max-width: 100vw;
+    max-height: 100vh;
     justify-content: center;
     align-items: center;
-    font-family: "Waiting for the Sunrise", cursive;
 }
-h1.cursor::after {
-    content:'';
-    display:inline-block;
-    margin-left:3px;
-    background-color:white;
-    animation-name:blink;
-    animation-duration:0.5s;
-    animation-iteration-count: infinite;
+header:after{
+    content:"";
+    width:100%;
+    overflow: hidden;
+    height:100%;
+    position:absolute;
+    bottom:0;
+    left:0;
+    z-index:-1;
+    background-attachment: fixed;
+   background: linear-gradient(to bottom, rgba(0,0,0,0.12) 40%,rgba(27,32,48,1) 100%);
   }
-h1.cursor::after {
-    height:28px;
-    width:13px;
+  header:before{
+    content:"";
+    overflow: hidden;
+    width:100vw;
+    height:200%;
+    max-height: 100vh;
+    max-width: 100vw;
+    position:absolute;
+    top:0;
+    left:0;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0); 
+    backface-visibility: hidden;
+    transform: scale(1.0, 1.0);
+    transform: translateZ(0);
+    background:#1B2030 url(./bg.jpg) 50% 0 no-repeat;
+    background-size: cover;
+    background-attachment:fixed;
+    animation: grow 50s  linear 10ms infinite;
+    transition:all 0.4s ease-in-out;
+    z-index:-2;
+  }
+  @keyframes grow{
+  0% { transform: scale(1) translateY(0px)}
+  50% { transform: scale(1) translateY(-38vh)}
+}
+#parent{
+    width: 100vw;
+    min-height: 60vh;
+    display: flex;
+    background-color: #999;
+    flex-direction: column;
+    padding-top: 30px;
+    align-items: center;
+}
+header>h1{
+    display: inline;
+    color: #111; 
+    font-family: 'Helvetica Neue', sans-serif; 
+    font-size: 10vw; 
+    text-shadow: white 0 0 10px;
+
+    font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;
 }
 
-@keyframes blink {
-    0% {
-        opacity:1;
-    }
-    49% {
-        opacity:1;
-    }
-    50% {
-        opacity:0;
-    }
-    100% {
-        opacity:0;
-    }
+#output{
+    width: 100%;
+    font-weight: 800;
+    color: black;
+    padding-top: 40px;
+    text-shadow: white 0 0 10px;
+    font-size: 3.5vw;
+    display: inline-flex;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
 }
-  
+pre{
+    background-color: transparent;
+}

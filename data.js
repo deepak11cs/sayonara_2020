@@ -1,8 +1,8 @@
-export const juniors =  { 
+const juniors =  { 
     "vasu": "This is vasu typing",
-    "shivani": "",
-    "tanmay": "",
+    "shivani": "This is shivani typing",
+    "tanmay": "This is tanmay typing",
     "hemant": ""
 };
-export const order = ["vasu","shivani","sanju","iti","shubham","nidhi","tanmay","saloni","hemant"];
+const order = ["vasu","shivani","sanju","iti","shubham","nidhi","tanmay","saloni","hemant"];
 

@@ -22,7 +22,7 @@ h1.cursor::after {
     animation-iteration-count: infinite;
   }
 h1.cursor::after {
-    height:24px;
+    height:28px;
     width:13px;
 }
 

@@ -7,14 +7,19 @@ document.addEventListener('DOMContentLoaded',function(event){
     let text = '';
     let display = '';
     const output = document.querySelector("#output");
+    const funky = ()=>{
+        document.querySelector('h3').classList.toggle('show');
+    }
     const insertElements = ()=>{
         
         if(orderIndex>=order.length){
+            setTimeout(funky,500);
             return;
         }
+
         text = juniors[order[orderIndex]];
         //console.log(text);
-        
+
         if(index>text.length-1){
             orderIndex++;
             index = 0;
@@ -27,8 +32,7 @@ document.addEventListener('DOMContentLoaded',function(event){
             output.innerHTML = display + '_';
             setTimeout(insertElements,typingSpeed);
         }
-        window.scrollTo(0,document.body.scrollHeight);
-        
+        window.scrollTo(0,document.body.scrollHeight);   
     }
     
     insertElements();
